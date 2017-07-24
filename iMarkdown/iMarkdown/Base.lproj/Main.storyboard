@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iMarkdown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEm-SS-Gei">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UUB-6T-Cs2"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="DwX-gf-wIJ">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="3qN-T4-jc2">
+                                            <connections>
+                                                <action selector="convertAction:" destination="BYZ-38-t0r" id="lvH-iT-G7n"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvu-CD-oTq">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="#abcd" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cld-Zh-W0B">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.43921568630000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jvu-CD-oTq" secondAttribute="trailing" id="1d3-bT-6Wg"/>
+                            <constraint firstItem="cld-Zh-W0B" firstAttribute="top" secondItem="zEm-SS-Gei" secondAttribute="bottom" id="1wz-b4-ByP"/>
+                            <constraint firstItem="zEm-SS-Gei" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="3vi-Vf-8z1"/>
+                            <constraint firstItem="zEm-SS-Gei" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6c1-RD-qIO"/>
+                            <constraint firstItem="jvu-CD-oTq" firstAttribute="leading" secondItem="cld-Zh-W0B" secondAttribute="trailing" constant="10" id="HLN-VK-6dE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cld-Zh-W0B" secondAttribute="bottom" id="JcG-x2-jEL"/>
+                            <constraint firstItem="cld-Zh-W0B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T7h-K2-MMy"/>
+                            <constraint firstItem="jvu-CD-oTq" firstAttribute="width" secondItem="cld-Zh-W0B" secondAttribute="width" id="YMT-S1-dlq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jvu-CD-oTq" secondAttribute="bottom" id="gM7-Ny-gLQ"/>
+                            <constraint firstAttribute="trailing" secondItem="zEm-SS-Gei" secondAttribute="trailing" id="oK2-Jd-9BS"/>
+                            <constraint firstItem="jvu-CD-oTq" firstAttribute="top" secondItem="zEm-SS-Gei" secondAttribute="bottom" id="sI4-Zk-bAl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextView" destination="cld-Zh-W0B" id="wwv-Uu-PTX"/>
+                        <outlet property="showWebView" destination="jvu-CD-oTq" id="kQn-lm-gPD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
