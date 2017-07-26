@@ -18,17 +18,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.handleMarkdownToHTMLNotification(notification:)), name: NSNotification.Name("markdownToHTMLNotification"), object: nil)
-        
-        do {
-            print("111")
-            let str = try String(contentsOf: URL(string: "https://github.com/iGhibli/iMarkdown/blob/master/LICENSE")!)
-            print("222")
-            print(str)
-            self.inputTextView.text = str
-            
-        }catch {
-            print(error.localizedDescription)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,7 +63,7 @@ class ViewController: UIViewController {
     }
     
     // JS打印Log的Swift块（闭包）
-    let consoleLog: @convention(block) (String) -> Void = { logMessage in
+    let  consoleLog: @convention(block) (String) -> Void = { logMessage in
         print("\nJS Console", logMessage)
     }
     

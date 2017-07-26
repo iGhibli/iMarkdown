@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="height" constant="44" id="UUB-6T-Cs2"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="DwX-gf-wIJ">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="3qN-T4-jc2">
+                                    <navigationItem title="iMark" id="DwX-gf-wIJ">
+                                        <barButtonItem key="rightBarButtonItem" title="Convert" id="3qN-T4-jc2">
                                             <connections>
                                                 <action selector="convertAction:" destination="BYZ-38-t0r" id="lvH-iT-G7n"/>
                                             </connections>
